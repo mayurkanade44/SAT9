@@ -12,6 +12,10 @@
 }
 
 h1,
+h2,
+h3,
+h4,
+h5,
 h6 {
   color: white;
 }
@@ -146,4 +150,11 @@ h6 {
     text-align: left;
     font-size: 14px !important;
   }
+}
+
+.footer {
+  background-color: rgb(21, 14, 39);
+  bottom: 0 !important;
+  padding: 6px 0px 1px 0px;
+  margin-top: 30px;
 }
