@@ -1,106 +1,149 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
-body {
-  background: #171717;
+
+.background-img {
+  background-image: url("./images/1.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
+
 h1,
 h6 {
   color: white;
 }
-.circular {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 8vh;
-}
-.circular.active {
-  min-height: 100vh;
-}
-.menu {
+
+.projects-card {
   position: relative;
-  width: 580px;
-  height: 120px;
-  display: flex;
-  justify-content: center;
-}
-.menu.active {
-  position: relative;
-  width: 550px;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border-radius: 1rem;
+  overflow: hidden;
 }
 
-.para.active {
-  height: 10px;
-  display: none;
-  transition: height 5s;
-  transition-delay: 2s;
-}
-
-.menu li {
+.lines {
   position: absolute;
+  inset: 0;
+  background: #000;
+}
+
+.lines::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 120px;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(
+    transparent,
+    #1ebba3,
+    #1ebba3,
+    #1ebba3,
+    transparent
+  );
+  animation: animate 4s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.lines::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  background: #292929;
+}
+
+.project-heading {
+  color: white !important;
+  font-size: 2.3em !important;
+  font-weight: 500 !important;
+  padding-top: 10px !important;
+  text-align: center;
+}
+
+.projects-modal {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: -100%;
   left: 0;
-  list-style: none;
-  transform-origin: 270px;
-  transition: 0.5s;
-  transition-delay: calc(0.1s * var(--i));
-  transform: rotate(0deg) translateX(230px) translateY(3px);
-}
-.menu.active li {
-  transform: rotate(calc(360deg / 9 * var(--i)));
-}
-
-.menu li a {
-  display: flex;
-  color: white;
-  font-size: 20px;
-  justify-content: center;
-  align-items: center;
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  text-decoration: none;
-  transform: rotate(calc(360deg / -9 * var(--i)));
-  transition: 0.5s;
-  background: black;
-  border: 2px solid #1f45b8;
-  box-shadow: 2px 2px 2px 2px rgb(0 0 0 / 50%),
-    -2px -2px 2px 1px rgb(108 108 108 / 20%),
-    inset 2px 2px 2px 2px rgb(0 0 0 / 50%),
-    inset -2px -2px 2px 1px rgb(108 108 108 / 20%);
-}
-.toggle {
-  position: absolute;
-  background: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 10000;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 2em;
-  transition: transform 1.25s;
-}
-.menu.active .toggle {
-  transform: rotate(360deg);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 5, 8, 0.664) 0%,
+    rgb(0, 3, 7) 95%
+  );
+  display: grid;
+  padding: 10px;
+  transition: 0.3s;
 }
 
-.toggle h4 {
-  font-size: 55px;
-  background-color: #18191f;
-  height: 90px;
-  width: 180px;
-  color: #fff;
-  border-radius: 10px;
-  padding: 8px 30px;
-  border: 1px solid white;
-  text-shadow: 0 0 10px #ff00ad, 0 0 25px #ff00ad, 0 0 30px #ff00ad,
-    0 0 35px #ff00ad;
+.projects-card:hover .projects-modal {
+  bottom: 0;
+}
+.projects-card:hover {
+  box-shadow: 0 4px 4px 5px rgba(77, 183, 193, 0.64) !important;
+}
+
+.card-title {
+  position: relative;
+  text-align: center;
+  color: #1ebba3;
+  font-weight: 700;
+}
+
+.card-body {
+  padding: 5px !important;
+}
+
+.card-img-top {
+  padding: 15px 15px 8px 15px !important;
+  opacity: 0.9 !important;
+  border-radius: 10px !important;
+}
+
+.project-inner {
+  position: relative; /* Change to relative to remove fixed style. */
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: transform;
+  background-image: url("./images/projects.png");
+}
+
+.dark {
+  background-color: rgba(0, 0, 0, 0.65);
+  padding: 5rem 2rem 0 2rem;
+  text-align: center;
+  z-index: 1000 !important;
+}
+
+.card {
+  height: 100%;
+  background-color: #0c0513;
+}
+
+.card-text {
+  text-align: left;
+}
+
+@media (max-width: 767px) {
+  .card-text {
+    text-align: left;
+    font-size: 14px !important;
+  }
 }
