@@ -23,7 +23,7 @@ h6 {
 .projects-card {
   position: relative;
   border-radius: 1rem;
-  border: 2px dashed rgba(227, 245, 65, 0.877);
+  /* border: 2px dashed rgba(227, 245, 65, 0.877); */
   overflow: hidden;
 }
 
@@ -109,8 +109,9 @@ h6 {
 .card-title {
   position: relative;
   text-align: center;
-  color: #1ebba3;
+  color: white;
   font-weight: 700;
+  font-size: 20px;
 }
 
 .card-body {
@@ -118,9 +119,11 @@ h6 {
 }
 
 .card-img-top {
-  padding: 15px 15px 8px 15px !important;
+  padding: 15px !important;
+  height: 200px;
   opacity: 0.9 !important;
   border-radius: 10px !important;
+  border: 2px dashed rgba(227, 245, 65, 0.877);
 }
 
 .project-inner {
