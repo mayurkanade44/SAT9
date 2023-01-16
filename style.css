@@ -23,6 +23,7 @@ h6 {
 .projects-card {
   position: relative;
   border-radius: 1rem;
+  border: 2px dashed rgba(227, 245, 65, 0.877);
   overflow: hidden;
 }
 
@@ -64,6 +65,14 @@ h6 {
   position: absolute;
   inset: 3px;
   background: #292929;
+}
+
+.grad {
+  font-size: 70px;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(to right, #f32170, #ff6b08, #cf23cf, #eedd44);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 }
 
 .project-heading {
@@ -149,6 +158,19 @@ h6 {
   .card-text {
     text-align: left;
     font-size: 14px !important;
+  }
+  .grad {
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to right, #f32170, #ff6b08, #cf23cf, #eedd44);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+  .description {
+    text-align: start !important;
+    font-size: 13px !important;
+    padding: 0 10px !important;
+    margin-bottom: 25px !important;
   }
 }
 
